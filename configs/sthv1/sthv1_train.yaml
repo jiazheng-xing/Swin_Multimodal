@@ -1,0 +1,51 @@
+resume:
+pretrain:
+seed: 1024
+data:
+    dataset: sthv1
+    modality: RGB
+    num_segments: 8
+    seg_length: 1
+    batch_size: 96
+    workers: 8
+    num_classes: 174
+    image_tmpl: '{:05d}.jpg'
+    train_list: 'lists/something_v1/train_videofolder.txt'  #'/public/home/ock/ActionCLIP/lists/k4001/train_frames_new.txt'#
+    val_list:  'lists/something_v1/val_videofolder.txt' #
+    label_list:  'lists/something_v1_labels.csv'
+    index_bias: 1
+    input_size: 224
+    randaug:
+        N: 0  #2
+        M: 0  #9
+    random_shift: True
+network:
+    arch: ViT-B/32  #ViT-B/32 ViT-B/16
+    init: True
+    tsm: False
+    drop_out: 0.0 
+    emb_dropout: 0.0 
+    type: clip_sthv1
+    sim_header: "Transf"  #Transf   meanP  LSTM Conv_1D Transf_cls
+    joint: False
+    describe:
+solver:
+    type: cosine
+    epochs: 50
+    start_epoch: 0
+    epoch_offset: 0
+    optim: adamw
+    lr: 5.e-6
+    lr_warmup_step: 5
+    momentum: 0.9
+    weight_decay:  0.0005
+    lr_decay_step: 15
+    lr_decay_factor: 0.1
+    clip_gradient: 20
+    loss_type: nll
+    evaluate: False
+    ratio: 1
+    f_ratio: 10
+logging:
+    print_freq: 10
+    eval_freq: 1
