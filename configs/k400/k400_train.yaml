@@ -10,7 +10,7 @@ data:
     workers: 16
     num_classes: 400
     image_tmpl: 'img_{:05d}.jpg'
-    train_list: '/public/home/ock/ActionCLIP/lists/k4001/train_frames_new.txt' #'/public/home/ock/ActionCLIP/lists/k4001/train_frames_new.txt'#
+    train_list: '/public/home/ock/ActionCLIP/lists/k4001/train_frames_new.txt'  #'/public/home/ock/ActionCLIP/lists/k4001/train_frames_new.txt'#
     val_list: 'lists/k4001/val_frames_re.txt' 
     label_list: 'lists/kinetics_400_labels.csv'
     index_bias: 1

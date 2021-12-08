@@ -1,4 +1,4 @@
-resume: #exp/clip_k400/ViT-B/32/kinetics400/20211201_154840/last_model.pt
+resume:  #exp/clip_k400/ViT-B/32/kinetics400/20211202_145110/last_model.pt  #exp/clip_k400/ViT-B/32/kinetics400/20211201_154840/last_model.pt
 pretrain:
 seed: 1024
 data:
@@ -42,8 +42,8 @@ swin_model:
     num_heads: [3,6,12,24]
 solver:
     type: cosine
-    epochs: 50
-    start_epoch: 0 #15
+    epochs: 30
+    start_epoch:   0 #14 #15
     epoch_offset: 0
     optim: adamw
     lr: 5.e-6
